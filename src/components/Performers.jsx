@@ -2,7 +2,8 @@ export default function Performers({ actresses, actors }) {
   return (
     <div className="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-2">
       {actresses.map((actress) => {
-        const { image, name, birth_year, nationality, biography, awards } = actress;
+        const { image, name, birth_year, nationality, biography, awards, most_famous_movies } =
+          actress;
         return (
           <div key={actress.id} className="col">
             <div className="card">
@@ -13,6 +14,14 @@ export default function Performers({ actresses, actors }) {
                   {birth_year} - {nationality}
                 </div>
                 <p className="bio mb-1">{biography}</p>
+                <div className="list-heading mt-2 border-top">Famous Roles:</div>
+                <ul className="famous-movies list-unstyled mb-0">
+                  {most_famous_movies.map((movie, index) => (
+                    <li key={index}>
+                      <strong>• {movie}</strong>
+                    </li>
+                  ))}
+                </ul>
                 <div className="list-heading mt-2 border-top">Awards:</div>
                 <ul className="awards list-unstyled mb-0">
                   <li>
@@ -25,7 +34,7 @@ export default function Performers({ actresses, actors }) {
         );
       })}
       {actors.map((actor) => {
-        const { image, name, birth_year, nationality, biography, awards } = actor;
+        const { image, name, birth_year, nationality, biography, awards, known_for } = actor;
         return (
           <div key={actor.id} className="col">
             <div className="card">
@@ -36,6 +45,14 @@ export default function Performers({ actresses, actors }) {
                   {birth_year} - {nationality}
                 </div>
                 <p className="bio mb-1">{biography}</p>
+                <div className="list-heading mt-2 border-top">Famous Roles:</div>
+                <ul className="famous-movies list-unstyled mb-0">
+                  {known_for.map((movie, index) => (
+                    <li key={index}>
+                      <strong>• {movie}</strong>
+                    </li>
+                  ))}
+                </ul>
                 <div className="list-heading mt-2 border-top">Awards:</div>
                 <ul className="awards list-unstyled mb-0">
                   {awards.map((award, index) => (
