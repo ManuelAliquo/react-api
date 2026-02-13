@@ -1,0 +1,13 @@
+.card-body {
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+.birth-nationality {
+  font-size: 0.9rem;
+}
+
+.bio,
+.awards {
+  font-size: 0.7rem;
+}
