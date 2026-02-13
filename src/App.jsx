@@ -2,8 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 // Components
-import ActorsList from "./components/ActorsList";
-import ActressesList from "./components/ActressesList";
+// import ActorsList from "./components/ActorsList";
+// import ActressesList from "./components/ActressesList";
+import Performers from "./components/Performers";
 
 // URL
 const baseUrl = "https://lanciweb.github.io";
@@ -23,15 +24,16 @@ export default function App() {
     <>
       <div className="container my-4">
         <h1 className="text-center mb-4">Actresses & Actors</h1>
-        {/* Actresses */}
-        <section>
+        {/* <section>
           <h2 className="mt-4 ms-2">Actresses List</h2>
           <ActressesList actresses={actresses} />
         </section>
-        {/* Actors */}
         <section>
           <h2 className="mt-4 ms-2">Actors List</h2>
           <ActorsList actors={actors} />
+        </section> */}
+        <section>
+          <Performers actresses={actresses} actors={actors} />
         </section>
       </div>
     </>
